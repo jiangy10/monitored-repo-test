@@ -53,9 +53,9 @@ describe("WebPubSubClient", function () {
         mock
           .expects("_sendMessage")
           .once()
-          .withArgs({ kind: "leaveGroup", group: "groupName", ackId: 1 } as LeaveGroupMessage)
+          .withArgs({ kind: "leaveGroup", group: "exampleGroup", ackId: 5 } as LeaveGroupMessage)
           .callsFake((_) => Promise.resolve());
-        client.leaveGroup("groupName");
+        client.leaveGroup("exampleGroup");
         mock.verify();
       });
     });
